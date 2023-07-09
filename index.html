@@ -20,6 +20,22 @@
           font-family: Arial;
           /* background-image: linear-gradient(to left, rgb(221, 250, 222) , rgb(180, 247, 185)); */
         }
+
+
+
+        #loading{
+          position: fixed;
+          width: 100%;
+          height: 100vh;
+          background-color: #f0f0f0;
+          z-index: 99999;
+          opacity: 1;
+        }
+
+      #loading img{margin:0;transform:translate(-50%,-50%) rotate(0deg) scale(1.4,1.4);position:absolute;left:50%;top:50%;border-radius:150px;box-sizing:border-box;animation:rotation 20s infinite linear;}
+
+      #loading img div:after{content:"";width:20px;height:20px;border:1px solid var(--green);box-sizing:border-box;position:absolute;left:20px;top:20px;animation:shuffle 2s infinite;}
+
         
         .header {
           text-align: center;
@@ -194,7 +210,11 @@
         }
         </style>
 </head>
-<body>
+<body onload="myFounction()">
+  <!----Preloader Section start---->
+<div id="loading">
+	<img src="image/loading.png" alt="">
+</div>
     <section>
 
             <!-- Header -->
@@ -251,5 +271,30 @@
     <footer>
 
     </footer>
+
+    <script>
+      
+		var preloader = document.getElementById('loading');
+		function myFounction(){
+			preloader.style.display = 'none'; 
+		}
+
+
+
+
+
+		
+
+/* Toggle between adding and removing the "responsive" class to topnav when the user clicks on the icon */
+function myFunction() {
+	var x = document.getElementById("myTopnav");
+	if (x.className === "topnav") {
+	  x.className += " responsive";
+	} else {
+	  x.className = "topnav";
+	}
+  }
+	</script>
+  
 </body>
 </html>
